@@ -32,17 +32,17 @@ Here are some size comparisons using jQuery 1.8.3 as an example.
 Standard Library:
 -----------------
 
-raw: 331,286 bytes
-min (jquery.min): 93,636 bytes
-yui: 105,103 bytes
-uglify: 92,604 bytes
+* raw: 331,286 bytes
+* min (jquery.min): 93,636 bytes
+* yui: 105,103 bytes
+* uglify: 92,604 bytes
 
 Parsed:
 -------
 
-raw: 369,687 bytes
-yui: 95,093 bytes
-uglify: 82,682 bytes
+* raw: 369,687 bytes
+* yui: 95,093 bytes
+* uglify: 82,682 bytes
 
 Now there are some drawbacks with my implementation here, it won’t remove or add to an existing closure, so you might have redundant code at the tope of your file, but as this is just a proof of concept I haven’t really parsed the JS so I didn’t want to potentially trash anything… Also if you rely on being in the global scope (Prototype for example) this will likely break your script. Other than that I haven’t encountered anything that’s been broken in this jQuery example by the process, but that certainly doesn’t mean nothing’s broken! I’ve also assumed DOM-centric script, using this as a short reference to the window as the default in minify.pl, but in Symbolise.pm it’s disabled by default.
 
